@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // promise是一个构造函数
+        // promise对象用来封装一个异步操作并可以获取成功/失败的结果值
+        // resolve 成功    reject 失败
+        function sleep(time) {
+            // todo...
+            return new Promise(function(resolve,reject) {
+                setTimeout(resolve,time)
+            })
+        }
+
+        // async 放在前面表示函数是一个异步函数
+        async function main() {
+            //awit关键字只能放到async里面
+            //awit表示等一下 代码就先到这里
+            await sleep(3000)
+            console.log('你好')
+        }
+
+        main() // 延迟三秒打印你好
+    </script>
+</body>
+
+</html>
